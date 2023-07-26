@@ -1,46 +1,53 @@
 import 'package:flutter/material.dart';
+
 import 'package:meals/data/dummy_data.dart';
-import 'package:meals/screens/meals.dart';
 import 'package:meals/widgets/category_grid_item.dart';
+import 'package:meals/screens/meals.dart';
+import 'package:meals/models/category.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  void _selectCategory(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: ((ctx) {
-          return const MealsScreen(title: 'Some title', meals: []);
-        }),
-      ),
-    ); // pushes a new layer of a screen on top
-    //   Navigator.of(context).push(route); // alternate way of handling it
-  }
+  void _selectCategory(BuildContext context, Category category) {
+    // final filteredMeals = dummyMeals
+    //     .where((meal) => meal.categories.contains(category.id))
+    //     .toList();
 
-  // navigator.pop - removes the layer you are on
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => MealsScreen(
+          title: category.title,
+          meals: dummyMeals,
+        ),
+      ),
+    ); // Navigator.push(context, route)
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Pick your category'),
+      appBar: AppBar(
+        title: const Text('Pick your category'),
+      ),
+      body: GridView(
+        padding: const EdgeInsets.all(24),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
         ),
-        body: GridView(
-          padding: const EdgeInsets.all(24),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 3 / 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20), // sets to two columns
-          children: [
-            for (final category in availableCategories)
-              CategoryGridItem(
-                  category: category,
-                  onSelectCategory: () {
-                    _selectCategory(context);
-                  })
-          ],
-        ));
+        children: [
+          // availableCategories.map((category) => CategoryGridItem(category: category)).toList()
+          for (final category in availableCategories)
+            CategoryGridItem(
+              category: category,
+              onSelectCategory: () {
+                _selectCategory(context, category);
+              },
+            )
+        ],
+      ),
+    );
   }
 }
