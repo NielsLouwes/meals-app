@@ -13,6 +13,11 @@ class MealDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final favoriteMeals = ref.watch(favoriteMealsProvider);
+
+    bool isFavorite = favoriteMeals.contains(
+        meal); // we set a boolean if our meal is part of favorites to render different Icons
+
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
@@ -31,7 +36,7 @@ class MealDetailsScreen extends ConsumerWidget {
                 ),
               ); // gives us access to the Notifer class in our provider.
             },
-            icon: const Icon(Icons.star),
+            icon: Icon(isFavorite ? Icons.star : Icons.star_border),
           ),
         ],
       ),
