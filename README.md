@@ -12,7 +12,6 @@ A Flutter learning project that includes:
 ## Screenshots
 
 Categories
-<img width="388" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/84a7d087-3361-44ee-ab4d-add13fb51756">
 Selected meals by category
 <img width="388" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/1309a709-3488-4191-a186-fe65105ddb36">
 Meal details screen
