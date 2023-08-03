@@ -1,4 +1,4 @@
-<img width="393" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/d7a19c5d-0175-4246-a84c-e60d5f8f44ea"># meals
+# Meals
 
 A Flutter learning project that includes:
 
@@ -11,13 +11,18 @@ A Flutter learning project that includes:
 
 ## Screenshots
 
-Categories
+Categories Screen
+<img width="394" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/57687287-0beb-4c68-8d75-69daff239586">
+
 Selected meals by category
-<img width="388" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/1309a709-3488-4191-a186-fe65105ddb36">
+<img width="373" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/01bc928f-de4d-4a68-b21c-bec1731c1bfd">
+
 Meal details screen
-<img width="390" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/c1a12122-385c-4f76-aab8-b03a02880ce5">
-Filters
-<img width="393" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/e501ce18-37d1-4943-8710-0192fdcd8c41">
+<img width="385" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/094f5a5e-b267-4853-b8d1-10e536164042">
+
+Filters Screen
+<img width="392" alt="image" src="https://github.com/NielsLouwes/meals-app/assets/76694402/fd32d9f5-3035-4a31-b418-cebac8d3ce1a">
+
 
 
 ## Getting Started
