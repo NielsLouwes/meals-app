@@ -36,7 +36,21 @@ class MealDetailsScreen extends ConsumerWidget {
                 ),
               ); // gives us access to the Notifer class in our provider.
             },
-            icon: Icon(isFavorite ? Icons.star : Icons.star_border),
+            icon: AnimatedSwitcher(
+              // animates when something changes - in our case the "Favorite Icon"
+              duration: const Duration(milliseconds: 300),
+              transitionBuilder: (child, animation) {
+                // this helps start the animation - Flutter will configure this
+                return RotationTransition(
+                  turns: Tween<double>(begin: 0.8, end: 1).animate(animation),
+                  child: child,
+                );
+              },
+              child: Icon(
+                isFavorite ? Icons.star : Icons.star_border,
+                key: ValueKey(isFavorite),
+              ),
+            ),
           ),
         ],
       ),
